@@ -9,7 +9,7 @@ const graphcms = new GraphQLClient(
 
 const QUERY = gql`
   {
-    posts {
+    posts(orderBy: publishedAt_DESC) {
       id
       title
       datePublished
@@ -48,7 +48,7 @@ export default function Home({ posts }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Blog</title>
+        <title>Writers Blog</title>
         <meta name="description" content="blog website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
